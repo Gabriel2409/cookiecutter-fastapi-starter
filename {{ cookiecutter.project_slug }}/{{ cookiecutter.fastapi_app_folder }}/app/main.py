@@ -1,7 +1,3 @@
-from app.routers import (
-    healthcheck,
-)
-from fastapi import FastAPI
+from app.application_factory import create_app
 
-app = FastAPI()
-app.include_router(healthcheck.router)
+app = create_app()
