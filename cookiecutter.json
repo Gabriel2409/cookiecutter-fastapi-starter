@@ -1,0 +1,6 @@
+{
+  "project_name": "Fastapi starter",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "author": "Anonymous",
+  "fastapi_app_folder": "backend"
+}
