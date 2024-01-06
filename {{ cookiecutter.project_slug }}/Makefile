@@ -1,5 +1,6 @@
 # where to install python venv: requirement files are in this directory
 PROJECT_DIR=.
+
 # fastapi app dir
 BACKEND_DIR=./{{ cookiecutter.fastapi_app_folder }}
 
@@ -12,7 +13,7 @@ help:
 	@echo "  - check-prerequisites: checks that important libraries are installed"
 	@echo "  - create-env-file: creates .env file from .env.example files"
 	@echo "  - venv: Create the python virtual environment and install dependencies"
-	@echo "  - install: checks that necessary tools and files are installed then launches venv target"
+	@echo "  - install: checks that necessary tools are installed then launches venv target"
 	@echo "  - clean: Remove generated files or directories."
 
 # just here to make install fail if we don't have the right tools
