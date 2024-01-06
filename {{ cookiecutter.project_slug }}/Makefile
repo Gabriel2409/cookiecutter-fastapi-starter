@@ -44,14 +44,14 @@ ${PROJECT_DIR}/venv/touchfile: ${PROJECT_DIR}/requirements.txt ${PROJECT_DIR}/re
 		pip install --upgrade pip && \
 		pip install -r ${PROJECT_DIR}/requirements.txt && \
 		pip install -r ${PROJECT_DIR}/requirements-dev.txt && \
-		pre-commit install && \ 
+		pre-commit install && \
 		pre-commit autoupdate
 	touch ${PROJECT_DIR}/venv/touchfile
 
 
 
 # make install will just run all the targets
-install: check-prerequisites create-env-file venv 
+install: check-prerequisites create-env-file venv
 	@echo "Installation complete. Don't forget to activate environment"
 
 
