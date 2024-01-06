@@ -20,7 +20,7 @@ help:
 git:
 	@if [ ! -d ${PROJECT_DIR}/.git ]; then \
 		echo "Initializing Git repository..."; \
-		git init
+		cd ${PROJECT_DIR} && git init; \
 	else \
 		echo "Git repository already exists."; \
 	fi
