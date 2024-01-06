@@ -4,17 +4,26 @@ PROJECT_DIR=.
 # fastapi app dir
 BACKEND_DIR=./{{ cookiecutter.fastapi_app_folder }}
 
-.PHONY: help check-prerequisites create-env-file venv install
+.PHONY: help git check-prerequisites create-env-file venv install
 
 # Display help message
 help:
 	@echo "Available targets:"
 	@echo "  - help: Display this help message."
+	@echo "  - git: Initialize git repository if repo is not a git repository"
 	@echo "  - check-prerequisites: checks that important libraries are installed"
 	@echo "  - create-env-file: creates .env file from .env.example files"
 	@echo "  - venv: Create the python virtual environment and install dependencies"
 	@echo "  - install: checks that necessary tools are installed then launches venv target"
 	@echo "  - clean: Remove generated files or directories."
+
+git:
+	@if [ ! -d ${PROJECT_DIR}/.git ]; then \
+		echo "Initializing Git repository..."; \
+		git init
+	else \
+		echo "Git repository already exists."; \
+	fi
 
 # just here to make install fail if we don't have the right tools
 # You can add the extra tools you need here
@@ -51,7 +60,7 @@ ${PROJECT_DIR}/venv/touchfile: ${PROJECT_DIR}/requirements.txt ${PROJECT_DIR}/re
 
 
 # make install will just run all the targets
-install: check-prerequisites create-env-file venv
+install: git check-prerequisites create-env-file venv
 	@echo "Installation complete. Don't forget to activate environment"
 
 
