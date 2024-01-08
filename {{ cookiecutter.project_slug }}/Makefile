@@ -15,6 +15,7 @@ help:
 	@echo "  - create-env-file: creates .env file from .env.example files"
 	@echo "  - venv: Create the python virtual environment and install dependencies"
 	@echo "  - install: checks that necessary tools are installed then launches venv target"
+	@echo "  - pytest-cov: Runs pytest with html coverage"
 	@echo "  - clean: Remove generated files or directories."
 
 git:
@@ -63,6 +64,8 @@ ${PROJECT_DIR}/venv/touchfile: ${PROJECT_DIR}/requirements.txt ${PROJECT_DIR}/re
 install: git check-prerequisites create-env-file venv
 	@echo "Installation complete. Don't forget to activate environment"
 
+pytest-cov:
+	pytest -vv --cov=. --cov-report=html --cov-report=term
 
 # deletes the virtual environment
 clean:
