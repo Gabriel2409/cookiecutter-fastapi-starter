@@ -67,5 +67,11 @@ install: git check-prerequisites create-env-file venv
 # deletes the virtual environment
 clean:
 	@echo "Cleaning up..."
+	find . -name '*.pyc' -exec rm -rf {} +
+	find . -name '__pycache__' -exec rm -rf {} +
+	find . -type d -name '.pytest_cache' -exec rm -rf {} +
+	find . -type d -name '*.egg-info' -exec rm -rf {} +
+	find . -type d -name 'htmlcov' -exec rm -rf {} +
+	find . -name '.coverage' -exec rm -rf {} +
 	@echo "Removing python virtual environment..."
 	rm -rf ${PROJECT_DIR}/venv
