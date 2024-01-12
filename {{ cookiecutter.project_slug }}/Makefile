@@ -65,7 +65,7 @@ install: git check-prerequisites create-env-file venv
 	@echo "Installation complete. Don't forget to activate environment"
 
 pytest-cov:
-	pytest -vv --cov=. --cov-report=html --cov-report=term
+	. venv/bin/activate && pytest -vv --cov=. --cov-report=html --cov-report=term
 
 # deletes the virtual environment
 clean:
