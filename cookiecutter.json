@@ -1,5 +1,6 @@
 {
   "project_name": "Fastapi starter",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "fastapi_app_folder": "backend"
+  "fastapi_app_folder": "backend",
+  "_copy_without_render": [".github/**.yml"]
 }
