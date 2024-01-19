@@ -1,6 +1,8 @@
 # {{ cookiecutter.project_name }}
 
 Fastapi starter generated with Gabriel2409/cookiecutter-fastapi-starter
+TODO: Add postgres dependency + test containers
+https://samanta-reinosoa.medium.com/testing-fastapi-with-testcontainers-in-gitlab-b7c62068aeef
 
 ## Install the prerequisites
 

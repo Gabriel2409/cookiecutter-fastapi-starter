@@ -78,3 +78,15 @@ clean:
 	find . -name '.coverage' -exec rm -rf {} +
 	@echo "Removing python virtual environment..."
 	rm -rf ${PROJECT_DIR}/venv
+
+
+
+# if you have docker installed.
+
+# launches app in watch mode for development
+docker-watch:
+	docker compose watch
+
+# runs the tests in the docker container
+docker-pytest-cov:
+	docker compose run --rm {{ cookiecutter.fastapi_app_folder }} pytest -vv --cov=. --cov-report=html --cov-report=term
